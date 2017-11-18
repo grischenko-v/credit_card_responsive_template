@@ -2,7 +2,7 @@
 #### Demo:
 ###### https://grischenko-v.github.io/credit_card_responsive_template/dist/
 ##
-![screenshot of sample](https://github.com/grischenko-v/credit_card_responsive_template/screen.png)
+![screenshot of sample](https://github.com/grischenko-v/credit_card_responsive_template/blob/master/screen.png)
 ## Lanching:
 - npm install
 - gulp
