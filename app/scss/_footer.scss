@@ -1,0 +1,44 @@
+//footer styles
+footer{
+  padding-left: 30px;
+  padding-top: 25px;
+  background-color: rgb(55, 60, 67);
+  float: right;
+  @include respond-to($phone-small){
+    display: none;
+  }
+  @include respond-to($phone-big){
+    display: none;
+  }
+  @include respond-to($tablet-portrait){
+    float: right;
+    width: 488px;
+    height: 251px;
+  }
+  @include respond-to($large-desktop){
+    float: right;
+    width: 639px;
+    height: 261px;
+  }
+  p{
+    color: rgb(133, 139, 152);  
+    @include respond-to($phone-small){
+
+    }
+    @include respond-to($phone-big){
+      
+    }
+    @include respond-to($tablet-portrait){
+      width: 443px;
+      font-size: 11px;
+      line-height: 14px;
+      margin-bottom: 14px;
+    }
+    @include respond-to($large-desktop){
+      width: 563px;
+      font-size: 12px;
+      line-height: 17px;
+      margin-bottom: 17px;
+    }
+  }
+ }

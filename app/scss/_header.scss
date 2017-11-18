@@ -1,0 +1,33 @@
+//header styles
+header{
+  background-color: rgb(0, 174, 239);
+  height: 162px;
+  padding-top: 32px;
+  padding-left: 29px;
+  @include respond-to($phone-small){
+    display: none;
+  }
+  @include respond-to($phone-big){
+   display: none;
+  }
+  @include respond-to($tablet-portrait){
+    float: right;
+    width: 488px;
+  }
+  @include respond-to($large-desktop){
+    float: right;
+    width: 639px;
+  }
+  h1{
+  	color: rgb(25, 57, 69);
+  	font-size: 26px;
+  	line-height: 43px;
+    font-family: OpenSansBold;
+  }
+  p{
+  	width: 432px;
+  	font-size: 12px;
+  	line-height: 23px;
+  }
+
+}

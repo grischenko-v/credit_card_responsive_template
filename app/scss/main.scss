@@ -1,0 +1,443 @@
+@import "susy";
+@import "grid";
+@import "reset";
+@import "fonts";
+@import "responsive";
+@import "header";
+@import "aside";
+@import "footer";
+
+*{
+	box-sizing: border-box;
+  font-family: Arial;
+}
+
+body{
+		background-color: rgb(16, 17, 20);
+}
+//for centring content
+.container{
+	margin: 0 auto;	
+ @include respond-to($phone-small) {
+    width: 320px;
+  }
+  @include respond-to($phone-big) {
+    width: 480px;
+  }
+  @include respond-to($tablet-portrait) {
+    width: 768px;
+  }
+  @include respond-to($large-desktop){
+    width: 960px;
+  }	
+}
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+//styles for inputs
+input{
+  outline:none;
+  border: 1px solid rgb(228, 233, 238);
+  &.redinputbottom{
+          border-bottom: 1px solid red ;
+  }
+  &:active, &:hover, &:focus {
+    outline: none;
+    outline-offset: 0;
+}
+}
+//select styles
+select { 
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 12px;
+  padding-left: 15px; 
+  font-size: 15px;
+  border: 1px solid rgb(228, 233, 238);
+  -webkit-appearance: none;
+  background-image: url('/img/arrow.png');
+  background-position: 47px center;
+  background-repeat: no-repeat;
+  line-height: 1em;
+  /* for FF */
+  -moz-appearance: none;
+  text-indent: 0.01px; 
+  text-overflow: '';
+  /* for IE */
+  -ms-appearance: none;
+  appearance: none!important;
+  &.redinputbottom{
+          border-bottom: 1px solid red ;
+  }
+   @include respond-to($phone-small){
+      width: 65px;
+      height: 30px;
+    }
+    @include respond-to($phone-big){
+      width: 70px;
+      height: 40px;
+    }
+    @include respond-to($tablet-portrait){
+       width: 50px;
+       height: 30px;
+    }
+    @include respond-to($large-desktop){
+      width: 70px;
+      height: 40px;
+    }  
+}
+ 
+#year{
+   padding-left: 19px; 
+   width: 85px; 
+   background-position: 65px center;
+} 
+select::-ms-expand {
+  display: none;
+}
+//card bordy styles
+main{  
+  position: relative;
+	float: right;
+	width: 639px;   
+	background-color: rgb(247, 248, 248);
+  @include respond-to($phone-small){
+    float: right;
+    width: 320px;
+    height: 600px;  
+    padding-top: 10px;
+    padding-left: 30px;
+  }
+  @include respond-to($phone-big){
+    float: right;
+    width: 480px;
+    height: 740px;  
+    padding-top: 15px;
+    padding-left: 65px;  
+  }
+  @include respond-to($tablet-portrait){
+    float: right;
+    width: 488px;
+    height: 570px;  
+    padding-top: 45px;
+    padding-left: 29px;  
+  }
+  @include respond-to($large-desktop){
+    float: right;
+    width: 639px;
+    height: 570px;  
+    padding-top: 45px;
+    padding-left: 29px;  
+  }
+  .bill_information{   
+    color: rgb(132, 148, 171);
+    @include respond-to($phone-small){
+      height: 100px;
+      width: 233px;
+      margin-bottom: 5px;
+      font-size: 13px;
+    }
+    @include respond-to($phone-big){
+      height: 100px;
+      width: 293px;
+      margin-bottom: 15px;
+    }
+    @include respond-to($tablet-portrait){
+      height: 100px;
+      width: 293px;
+      margin-bottom: 25px;
+    }
+    @include respond-to($large-desktop){
+      height: 100px;
+      width: 293px;
+      margin-bottom: 25px;
+    }
+    p:first-of-type{
+      line-height: 38px;
+    }
+    p{
+      line-height: 26px; 
+      span{
+        color: black;        
+      }
+      .account_number{
+        margin-left: 58px;
+      }
+      .amount{
+        margin-left: 37px;
+        @include respond-to($phone-small){
+        margin-left: 41px;
+         }
+      } 
+    }
+  }
+  //header
+  h2{
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 43px;
+    font-family: OpenSansBold;
+    @include respond-to($phone-small){
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 33px;
+    }
+  }
+
+  .front, .back{    
+    padding-left: 15px;
+    padding-top: 23px;
+    border: 1px solid rgb(228, 233, 238);
+    border-radius: 8px;
+    @include respond-to($phone-small){
+      width: 260px;
+      height: 184px;
+      padding-top: 18px;
+    }
+    @include respond-to($phone-big){
+      width: 349px;
+      height: 234px;
+    }
+    @include respond-to($tablet-portrait){
+      width: 290px;
+      height: 204px;
+    }
+    @include respond-to($large-desktop){
+      width: 349px;
+      height: 234px;
+    }    
+  }
+
+  .front{
+    position: absolute;
+    z-index: 3;
+    background-color: rgb(247, 248, 248);
+    label{
+      color: rgb(132, 148, 171);
+      display: block;
+    }
+  .card_number{    
+    display: inline-block;
+    text-align: center;
+    margin-right: 9px;
+    margin-top: 5px;
+    margin-bottom: 16px;
+    @include respond-to($phone-small){
+     width: 47px;
+     height: 30px;
+     margin-bottom: 10px;
+    }
+    @include respond-to($phone-big){
+     width: 64px;
+     height: 40px;
+    }
+    @include respond-to($tablet-portrait){
+      width: 54px;
+      height: 30px;
+    }
+    @include respond-to($large-desktop){
+     width: 64px;
+     height: 40px;
+    } 
+    &:last-of-type{
+      margin-right: 0;
+    }
+  }
+ 
+  #personName{
+    display: block;   
+    padding: 5px;
+    @include respond-to($phone-small){
+      height: 31px;
+      width: 219px;
+    }
+    @include respond-to($phone-big){
+      height: 41px;
+      width: 319px;
+    }
+    @include respond-to($tablet-portrait){
+      height: 34px;
+      width: 249px;
+    }
+    @include respond-to($large-desktop){
+      height: 41px;
+      width: 319px;
+    } 
+  }
+ } 
+ 
+  .back{    
+    z-index: 2;
+    @include respond-to($phone-small){
+     position: absolute;
+     top: 349px;
+     right: 30px;
+    }
+    @include respond-to($phone-big){
+     position: absolute;
+     top: 429px;
+     right: 65px;
+    }
+    @include respond-to($tablet-portrait){
+     position: absolute;
+     top: 229px;
+     right: 46px;
+    }
+    @include respond-to($large-desktop){
+     position: absolute;
+     top: 229px;
+     right: 46px;
+    }
+    label{
+      color: rgb(132, 148, 171);
+      display: inline-block;
+     
+      @include respond-to($phone-small){
+        margin-left: 137px;
+        margin-top: 16px;
+        height: 17px;
+        font-size: 9px;
+      }
+      @include respond-to($phone-big){
+        margin-left: 187px;
+        margin-top: 16px;
+        height: 25px;
+        font-size: 13px;
+      }
+      @include respond-to($tablet-portrait){
+        margin-left: 167px;
+        margin-top: 14px;
+        height: 25px;
+        font-size: 12px;
+      }
+      @include respond-to($large-desktop){
+        margin-left: 187px;
+        margin-top: 16px;
+        height: 25px;
+        font-size: 13px; 
+      }
+    }
+    input[type="password"]{      
+      @include respond-to($phone-small){
+       width: 77px;
+       height: 31px;
+       margin-left: 135px;
+      }
+      @include respond-to($phone-big){
+       width: 87px;
+       height: 41px;
+       margin-left: 195px;
+      }
+      @include respond-to($tablet-portrait){
+       width: 97px;
+       height: 31px;
+       margin-left: 167px;
+      }
+      @include respond-to($large-desktop){
+       width: 137px;
+       height: 41px;
+       margin-left: 187px;
+      }
+      display: inline-block;     
+      text-align: center;
+    }
+    .grey-line{      
+      background-color: rgb(228, 233, 238);
+      float: right;
+      @include respond-to($phone-small){
+        height: 41px;
+        width: 258px;
+        margin-top: 13px;
+      }
+      @include respond-to($phone-big){
+        height: 41px;
+        width: 348px;
+        margin-top: 16px;
+      }
+      @include respond-to($tablet-portrait){
+        height: 31px;
+        width: 215px;
+        margin-top: 19px;
+      }
+      @include respond-to($large-desktop){
+        height: 41px;
+        width: 215px;
+        margin-top: 26px;
+      }
+    }
+    .question{
+      position: absolute;      
+      border-radius: 50%;
+      cursor: pointer;
+      border: 1px solid rgb(132, 148, 171);
+      color: rgb(132, 148, 171);
+     
+      @include respond-to($phone-small){
+        width: 16px;
+        height: 16px;
+        padding-top: 0px;
+        padding-left: 4px;
+        right: 35px;
+        top: 110px;
+        font-size: 13px;
+      }
+      @include respond-to($phone-big){
+        width: 24px;
+        height: 24px;
+        padding-top: 3px;
+        padding-left: 7px;
+        right: 55px;
+        top: 130px;
+      }
+      @include respond-to($tablet-portrait){
+        width: 18px;
+        height: 18px;
+        padding-top: 1px;
+        padding-left: 4px;
+        right: 15px;
+        top: 118px;
+      }
+      @include respond-to($large-desktop){
+        width: 24px;
+        height: 24px;
+        padding-top: 3px;
+        padding-left: 7px;
+        right: 15px;
+        top: 140px;
+      }
+    }
+  }
+  .btn{
+    width: 172px;
+    height: 39px; 
+    background: radial-gradient(rgb(136, 175, 0), rgb(136, 183, 0));
+   
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    padding-left: 50px;
+    padding-top: 13px;
+    cursor: pointer;
+    @include respond-to($phone-small){
+         margin-top: 400px;
+      }
+      @include respond-to($phone-big){
+         margin-top: 514px;
+      }
+      @include respond-to($tablet-portrait){
+          margin-top: 264px;
+      }
+      @include respond-to($large-desktop){
+         margin-top: 264px;
+      }
+    &:hover{
+       background: radial-gradient(rgb(136, 183, 0), rgb(166, 193, 0));
+    }
+    &:active{
+      background: radial-gradient(rgb(166, 193, 0), rgb(176, 199, 0));
+    }
+  }
+}

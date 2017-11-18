@@ -1,0 +1,131 @@
+//left side styles
+aside{
+ box-sizing: border-box;    
+ background-color: rgb(31, 34, 41); 
+
+ @include respond-to($phone-small){
+   float: left;
+   width: 320px;  
+ }
+ @include respond-to($phone-big){
+   float: left;
+   width: 480px;  
+ }
+ @include respond-to($tablet-portrait){
+   float: left;
+   width: 280px; 
+ }
+ @include respond-to($large-desktop){
+   float: left;
+   width: 321px; 
+ }
+ //logo
+ img{    
+   margin-top: 64px;
+   margin-left: 30px;
+   margin-bottom: 62px;
+   @include respond-to($phone-small){
+     display: none;
+   }
+   @include respond-to($phone-big){
+     display: none;
+   }
+   @include respond-to($tablet-portrait){
+     width: 178px;
+     height: 37px;
+   }
+   @include respond-to($large-desktop){
+     width: 178px;
+     height: 37px;
+   }
+  }
+   //menu
+   ul{  
+     list-style: none;   
+     @include respond-to($phone-small){
+       width: 320px;
+     }
+     @include respond-to($phone-big){
+      
+      width: 480px;
+     }
+     @include respond-to($tablet-portrait){
+      
+       width: 321px;
+     }
+     @include respond-to($large-desktop){      
+       width: 321px;
+    }
+     li{             
+       @include respond-to($phone-small){
+         display: inline;
+       }
+       @include respond-to($phone-big){      
+         display: inline;
+       }
+       @include respond-to($tablet-portrait){
+         display: block; 
+       }
+       @include respond-to($large-desktop){
+        display: block; 
+       }
+       .active{
+     	   background-color: rgb(42, 45, 55);
+         color: rgb(128, 133, 146);
+        }
+        .lk, .exit{
+           color: rgb(128, 133, 146);
+           background-color: rgb(25, 28, 36);          
+        }       
+     	a{     	  
+     	  text-decoration: none;        
+     	  font-family: OpenSansBold;
+        font-weight: bold;  
+        @include respond-to($phone-small){
+          height: 40px;
+          width: 60px; 
+          color: white; 
+          font-size: 7px;
+          padding-top: 17px;
+          text-align: center;
+          display: inline-block;
+        }
+        @include respond-to($phone-big){      
+          height: 40px;
+          width: 92px; 
+          color: white; 
+          font-size: 11px;
+          padding-top: 10px;
+          text-align: center;
+          display: inline-block;
+        }
+        @include respond-to($tablet-portrait){
+          height: 75px;
+          width: 280px; 
+          color: white; 
+          padding-left: 30px;
+          padding-top: 29px;
+          font-size: 14px;
+          display: block; 
+        }
+        @include respond-to($large-desktop){
+          height: 75px;
+          width: 321px; 
+          color: white; 
+          padding-left: 30px;
+          padding-top: 29px;
+          font-size: 14px;
+          display: block; 
+        }
+        &:hover{
+           color: #ccc; 
+           background-color: #eee; 
+          }   
+        &:active{
+          color: #ddd; 
+           background-color: #fff; 
+        }   
+     	}
+     }
+   }
+}
