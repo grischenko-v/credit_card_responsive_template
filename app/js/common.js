@@ -38,23 +38,27 @@
 
   //add red lines to inputs
   function cardRedBorderAdd(e){
-
-    if(this.value.length > 3){
-      this.value = this.value.substring(0, 4);
-  	  e.preventDefault(); 
-    }
+    e.preventDefault();
+     let char = String.fromCharCode(e.keyCode)
+    if(e.keyCode === 8 && this.value.length) this.value =  this.value.substring(0, this.value.length - 1);        
+    if(this.value.length > 3 || !/\d/.test(char)) this.value = this.value; 	       
+    else this.value += String.fromCharCode(e.keyCode);
     if(!cardNumberFieldCheck(this.value))   this.classList.add("redinputbottom");     
     else this.classList.remove("redinputbottom");   
   } 
   
   function nameRedBorderAdd(e){
   	if(!nameCheck(this.value))   this.classList.add("redinputbottom");     
-     else this.classList.remove("redinputbottom"); 
+    else this.classList.remove("redinputbottom"); 
   }
   
   function cvcRedBorderAdd(e){
+    if(this.value.length > 2){
+      this.value = this.value.substring(0, 2);
+ 
+    }   
   	if(!CVVCheck(this.value))   this.classList.add("redinputbottom");     
-     else this.classList.remove("redinputbottom"); 
+    else this.classList.remove("redinputbottom"); 
   }
  
   //check inputs functions
@@ -69,8 +73,21 @@
   };
 
   function cardNumberFieldCheck(str){
-    if(/[0-9]{3}/.test(str) && str.length < 4) return true;   
+    if(/[0-9]{4}/.test(str)) return true;   
     return false;
  };
+
+//learn js ru
+ function getChar(event) {
+  if (event.which == null) { // IE
+    if (event.keyCode < 32) return null; // спец. символ
+    return String.fromCharCode(event.keyCode)
+  }
+  if (event.which != 0 && event.charCode != 0) { // все кроме IE
+    if (event.which < 32) return null; // спец. символ
+    return String.fromCharCode(event.which); // остальные
+  }
+  return null; // спец. символ
+}
 
 })();
