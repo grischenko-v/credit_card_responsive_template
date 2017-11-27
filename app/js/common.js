@@ -38,8 +38,13 @@
 
   //add red lines to inputs
   function cardRedBorderAdd(e){
-  	  if(!cardNumberFieldCheck(this.value))   this.classList.add("redinputbottom");     
-     else this.classList.remove("redinputbottom");   
+
+    if(this.value.length > 3){
+      this.value = this.value.substring(0, 4);
+  	  e.preventDefault(); 
+    }
+    if(!cardNumberFieldCheck(this.value))   this.classList.add("redinputbottom");     
+    else this.classList.remove("redinputbottom");   
   } 
   
   function nameRedBorderAdd(e){
