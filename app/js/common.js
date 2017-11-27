@@ -35,7 +35,6 @@
    personName.addEventListener("keydown", nameRedBorderAdd, false);    
    cvc.addEventListener("keydown", cvcRedBorderAdd, false);
  
-
   //add red lines to inputs
   function cardRedBorderAdd(e){
     e.preventDefault();
@@ -53,10 +52,11 @@
   }
   
   function cvcRedBorderAdd(e){
-    if(this.value.length > 2){
-      this.value = this.value.substring(0, 2);
- 
-    }   
+    e.preventDefault();
+    let char = String.fromCharCode(e.keyCode)
+    if(e.keyCode === 8 && this.value.length) this.value =  this.value.substring(0, this.value.length - 1);        
+    if(this.value.length > 2 || !/\d/.test(char)) this.value = this.value;         
+    else this.value += String.fromCharCode(e.keyCode);  
   	if(!CVVCheck(this.value))   this.classList.add("redinputbottom");     
     else this.classList.remove("redinputbottom"); 
   }
@@ -68,7 +68,7 @@
   };
   
   function CVVCheck(str){
-    if(/[0-9]{2}/.test(str) && str.length <3) return true;
+    if(/[0-9]{2}/.test(str)) return true;
     return false;
   };
 
