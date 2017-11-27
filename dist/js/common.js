@@ -35,37 +35,59 @@
    personName.addEventListener("keydown", nameRedBorderAdd, false);    
    cvc.addEventListener("keydown", cvcRedBorderAdd, false);
  
-
   //add red lines to inputs
   function cardRedBorderAdd(e){
-  	  if(!cardNumberFieldCheck(this.value))   this.classList.add("redinputbottom");     
-     else this.classList.remove("redinputbottom");   
+    e.preventDefault();
+     let char = String.fromCharCode(e.keyCode)
+    if(e.keyCode === 8 && this.value.length) this.value =  this.value.substring(0, this.value.length - 1);        
+    if(this.value.length > 3 || !/\d/.test(char)) this.value = this.value; 	       
+    else this.value += String.fromCharCode(e.keyCode);
+    if(!cardNumberFieldCheck(this.value))   this.classList.add("redinputbottom");     
+    else this.classList.remove("redinputbottom");   
   } 
   
   function nameRedBorderAdd(e){
   	if(!nameCheck(this.value))   this.classList.add("redinputbottom");     
-     else this.classList.remove("redinputbottom"); 
+    else this.classList.remove("redinputbottom"); 
   }
   
   function cvcRedBorderAdd(e){
+    e.preventDefault();
+    let char = String.fromCharCode(e.keyCode)
+    if(e.keyCode === 8 && this.value.length) this.value =  this.value.substring(0, this.value.length - 1);        
+    if(this.value.length > 2 || !/\d/.test(char)) this.value = this.value;         
+    else this.value += String.fromCharCode(e.keyCode);  
   	if(!CVVCheck(this.value))   this.classList.add("redinputbottom");     
-     else this.classList.remove("redinputbottom"); 
+    else this.classList.remove("redinputbottom"); 
   }
  
   //check inputs functions
   function nameCheck(str){  
-    if(/[a-z]{4,}/i.test(str)) 	return true; 
+    if(/[A-Z][a-z]{4,}\s[A-Z][a-z]{4,}/.test(str)) 	return true; 
     return false;
   };
   
   function CVVCheck(str){
-    if(/[0-9]{2}/.test(str) && str.length <3) return true;
+    if(/[0-9]{2}/.test(str)) return true;
     return false;
   };
 
   function cardNumberFieldCheck(str){
-    if(/[0-9]{3}/.test(str) && str.length < 4) return true;   
+    if(/[0-9]{4}/.test(str)) return true;   
     return false;
  };
+
+//learn js ru
+ function getChar(event) {
+  if (event.which == null) { // IE
+    if (event.keyCode < 32) return null; // спец. символ
+    return String.fromCharCode(event.keyCode)
+  }
+  if (event.which != 0 && event.charCode != 0) { // все кроме IE
+    if (event.which < 32) return null; // спец. символ
+    return String.fromCharCode(event.which); // остальные
+  }
+  return null; // спец. символ
+}
 
 })();
