@@ -59,7 +59,7 @@
  
   //check inputs functions
   function nameCheck(str){  
-    if(/[a-z]{4,}/i.test(str)) 	return true; 
+    if(/[A-Z][a-z]{4,}\s[A-Z][a-z]{4,}/.test(str)) 	return true; 
     return false;
   };
   
